@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Pakar Diagnosa Penyakit Kacang Kedelai</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f2f5;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #f5f6fa;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+      }
+      button {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        border-left: 4px solid #3498db;
+      }
+      .checkbox-group {
+        margin-bottom: 10px;
+      }
+      .checkbox-group input[type="checkbox"] {
+        margin-right: 8px;
+      }
+      .error {
+        color: #e74c3c;
+        margin-top: 10px;
+      }
+      .disease-section {
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .disease-title {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sistem Pakar Diagnosa Penyakit Kacang Kedelai</h1>
+
+      <h2>Data Penyakit dan Gejala</h2>
+
+      <!-- Penggulung Daun -->
+      <div class="disease-section">
+        <h3 class="disease-title">1. Penyakit Penggulung Daun</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Gejala</th>
+              <th>MB</th>
+              <th>MD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G01</td>
+              <td>Daun Tergulung</td>
+              <td>0.78</td>
+              <td>0.15</td>
+            </tr>
+            <tr>
+              <td>G02</td>
+              <td>Berwarna Coklat Hitam</td>
+              <td>0.60</td>
+              <td>0.05</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Karat Daun -->
+      <div class="disease-section">
+        <h3 class="disease-title">2. Penyakit Karat Daun</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Gejala</th>
+              <th>MB</th>
+              <th>MD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G03</td>
+              <td>Bintik-bintik coklat kemerahan</td>
+              <td>0.87</td>
+              <td>0.10</td>
+            </tr>
+            <tr>
+              <td>G04</td>
+              <td>Daun menguning dan rontok</td>
+              <td>0.75</td>
+              <td>0.12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Ulat Gerayak -->
+      <div class="disease-section">
+        <h3 class="disease-title">3. Penyakit Ulat Gerayak</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Gejala</th>
+              <th>MB</th>
+              <th>MD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G05</td>
+              <td>Daun berlubang tidak beraturan</td>
+              <td>0.82</td>
+              <td>0.08</td>
+            </tr>
+            <tr>
+              <td>G06</td>
+              <td>Terdapat ulat berwarna hijau</td>
+              <td>0.90</td>
+              <td>0.05</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Penggerek Polong -->
+      <div class="disease-section">
+        <h3 class="disease-title">4. Penyakit Penggerek Polong</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Gejala</th>
+              <th>MB</th>
+              <th>MD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G07</td>
+              <td>Polong berlubang</td>
+              <td>0.85</td>
+              <td>0.07</td>
+            </tr>
+            <tr>
+              <td>G08</td>
+              <td>Biji rusak</td>
+              <td>0.80</td>
+              <td>0.10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Penggerek Batang -->
+      <div class="disease-section">
+        <h3 class="disease-title">5. Penyakit Penggerek Batang</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Gejala</th>
+              <th>MB</th>
+              <th>MD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G09</td>
+              <td>Batang berlubang</td>
+              <td>0.88</td>
+              <td>0.06</td>
+            </tr>
+            <tr>
+              <td>G10</td>
+              <td>Tanaman layu</td>
+              <td>0.75</td>
+              <td>0.15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Form Diagnosa</h2>
+      <form id="diagnosisForm" onsubmit="return false;">
+        <div class="form-group">
+          <label for="certaintyLevel">Tingkat Keyakinan Gejala:</label>
+          <select id="certaintyLevel">
+            <option value="0">Tidak</option>
+            <option value="0.2">Tidak tahu</option>
+            <option value="0.4">Sedikit yakin</option>
+            <option value="0.6">Cukup yakin</option>
+            <option value="0.8">Yakin</option>
+            <option value="1">Sangat yakin</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Pilih Gejala yang Terlihat:</label>
+          <!-- Gejala Penggulung Daun -->
+          <div class="disease-section">
+            <h3>Gejala Penggulung Daun:</h3>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g01" name="symptoms" value="G01" />
+              <label for="g01">Daun Tergulung</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g02" name="symptoms" value="G02" />
+              <label for="g02">Berwarna Coklat Hitam</label>
+            </div>
+          </div>
+
+          <!-- Gejala Karat Daun -->
+          <div class="disease-section">
+            <h3>Gejala Karat Daun:</h3>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g03" name="symptoms" value="G03" />
+              <label for="g03">Bintik-bintik coklat kemerahan</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g04" name="symptoms" value="G04" />
+              <label for="g04">Daun menguning dan rontok</label>
+            </div>
+          </div>
+
+          <!-- Gejala Ulat Gerayak -->
+          <div class="disease-section">
+            <h3>Gejala Ulat Gerayak:</h3>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g05" name="symptoms" value="G05" />
+              <label for="g05">Daun berlubang tidak beraturan</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g06" name="symptoms" value="G06" />
+              <label for="g06">Terdapat ulat berwarna hijau</label>
+            </div>
+          </div>
+
+          <!-- Gejala Penggerek Polong -->
+          <div class="disease-section">
+            <h3>Gejala Penggerek Polong:</h3>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g07" name="symptoms" value="G07" />
+              <label for="g07">Polong berlubang</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g08" name="symptoms" value="G08" />
+              <label for="g08">Biji rusak</label>
+            </div>
+          </div>
+
+          <!-- Gejala Penggerek Batang -->
+          <div class="disease-section">
+            <h3>Gejala Penggerek Batang:</h3>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g09" name="symptoms" value="G09" />
+              <label for="g09">Batang berlubang</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="g10" name="symptoms" value="G10" />
+              <label for="g10">Tanaman layu</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" onclick="diagnose()">Diagnosa</button>
+      </form>
+
+      <div id="result" class="result" style="display: none">
+        <h3>Hasil Diagnosa:</h3>
+        <p id="diagnosisResult"></p>
+      </div>
+    </div>
+
+    <script>
+      function calculateCF(mb, md) {
+          return parseFloat((mb - md).toFixed(4));
+      }
+
+      function combineCF(cf1, cf2) {
+          return parseFloat((cf1 + cf2 * (1 - cf1)).toFixed(4));
+      }
+
+      function diagnose() {
+          try {
+              const symptoms = document.querySelectorAll('input[name="symptoms"]:checked');
+              const certaintyLevel = parseFloat(document.getElementById('certaintyLevel').value);
+
+              if (symptoms.length === 0) {
+                  alert('Silakan pilih minimal satu gejala!');
+                  return;
+              }
+
+              const symptomData = {
+                  // Penggulung Daun
+                  'G01': { mb: 0.78, md: 0.15, name: 'Daun Tergulung', disease: 'penggulung' },
+                  'G02': { mb: 0.60, md: 0.05, name: 'Berwarna Coklat Hitam', disease: 'penggulung' },
+                  // Karat Daun
+                  'G03': { mb: 0.87, md: 0.10, name: 'Bintik-bintik coklat kemerahan', disease: 'karat' },
+                  'G04': { mb: 0.75, md: 0.12, name: 'Daun menguning dan rontok', disease: 'karat' },
+                  // Ulat Gerayak
+                  'G05': { mb: 0.82, md: 0.08, name: 'Daun berlubang tidak beraturan', disease: 'gerayak' },
+                  'G06': { mb: 0.90, md: 0.05, name: 'Terdapat ulat berwarna hijau', disease: 'gerayak' },
+                  // Penggerek Polong
+                  'G07': { mb: 0.85, md: 0.07, name: 'Polong berlubang', disease: 'polong' },
+                  'G08': { mb: 0.80, md: 0.10, name: 'Biji rusak', disease: 'polong' },
+                  // Penggerek Batang
+                  'G09': { mb: 0.88, md: 0.06, name: 'Batang berlubang', disease: 'batang' },
+                  'G10': { mb: 0.75, md: 0.15, name: 'Tanaman layu', disease: 'batang' }
+              };
+
+              let cfValues = {
+                  'penggulung': 0,
+                  'karat': 0,
+                  'gerayak': 0,
+                  'polong': 0,
+                  'batang': 0
+              };
+
+              let isFirst = {
+                  'penggulung': true,
+                  'karat': true,
+                  'gerayak': true,
+                  'polong': true,
+                  'batang': true
+              };
+
+              let selectedSymptoms = [];
+
+              symptoms.forEach(symptom => {
+                  const data = symptomData[symptom.value];
+                  const cf = calculateCF(data.mb, data.md) * certaintyLevel;
+                  selectedSymptoms.push(data.name);
+
+                  if (isFirst[data.disease]) {
+                      cfValues[data.disease] = cf;
+                      isFirst[data.disease] = false;
+                  } else {
+                      cfValues[data.disease] = combineCF(cfValues[data.disease], cf);
+                  }
+              });
+
+              const resultDiv = document.getElementById('result');
+              const resultText = document.getElementById('diagnosisResult');
+
+              let diagnoses = [];
+              for (let disease in cfValues) {
+                  if (cfValues[disease] > 0) {
+                      const percentage = (cfValues[disease] * 100).toFixed(1);
+                      let diseaseName = '';
+                      switch(disease) {
+                          case 'penggulung': diseaseName = 'Penggulung Daun'; break;
+                          case 'karat': diseaseName = 'Karat Daun'; break;
+                          case 'gerayak': diseaseName = 'Ulat Gerayak'; break;
+                          case 'polong': diseaseName = 'Penggerek Polong'; break;
+                          case 'batang': diseaseName = 'Penggerek Batang'; break;
+                      }
+                      diagnoses.push(${diseaseName}: ${percentage}%);
+                  }
+              }
+
+              resultDiv.style.display = 'block';
+              resultText.innerHTML = `
+                  <strong>Gejala yang dipilih:</strong><br>
+                  ${selectedSymptoms.join('<br>')}<br><br>
+                  <strong>Hasil Diagnosa:</strong><br>
+                  ${diagnoses.join('<br>')}<br><br>
+                  <strong>Rekomendasi:</strong><br>
+                  ${getRecommendation(Math.max(...Object.values(cfValues)) * 100)}
+              `;
+          } catch (error) {
+              console.error('Terjadi kesalahan:', error);
+              alert('Terjadi kesalahan dalam proses diagnosa. Silakan coba lagi.');
+          }
+      }
+
+      function getRecommendation(percentage) {
+          if (percentage >= 80) {
+              return "Segera lakukan penanganan serius karena tingkat keyakinan penyakit sangat tinggi.";
+          } else if (percentage >= 60) {
+              return "Disarankan untuk melakukan pemeriksaan lebih lanjut dan tindakan pencegahan.";
+          } else if (percentage >= 40) {
+              return "Lakukan monitoring rutin dan tindakan pencegahan ringan.";
+          } else {
+              return "Tetap pantau kondisi tanaman, namun kemungkinan penyakit relatif rendah.";
+          }
+      }
+    </script>
+  </body>
+</html>
